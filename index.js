@@ -8,7 +8,7 @@ function conectado(){
 
 !function conectado(){
     gameControl.on('disconnect', gamepad);
-    
+    changeBackgroundColor("#ff0000");
 
 }
 function rotacion(){

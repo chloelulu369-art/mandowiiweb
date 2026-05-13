@@ -13,4 +13,14 @@ apartados:
 3-minijuego a
 4-minijuego b
 
-si sobra tiempo: añadir nuck
+si sobra tiempo: añadir nuck, cambio de personajes.
+
+diseño de interfaz a fondo:
+fondo plano
+personaje 
+  { 3 frames o mas }
+dato del angulo 
+reprecentacion grafica del dato del angulo (opcional)
+mando conectado
+mando desconectado/pausa
+cuenta regresiva

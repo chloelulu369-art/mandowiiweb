@@ -24,3 +24,5 @@ reprecentacion grafica del dato del angulo (opcional)
 mando conectado
 mando desconectado/pausa
 cuenta regresiva
+
+leeer js ya de eventos

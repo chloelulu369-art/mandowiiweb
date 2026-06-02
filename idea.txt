@@ -26,3 +26,4 @@ mando desconectado/pausa
 cuenta regresiva
 
 leeer js ya de eventos
+ide= <input type="radio" name="radio1" id="radioa"><br>

@@ -1,0 +1,12 @@
+#contenedorbase{
+  display: flex;
+  background-color: #000;  
+  height: 300px;
+  color:white;
+  font-size:2rem;
+#auto{
+  display: flex;
+  background-color: #000;  
+  height: 300px;
+  color:white;
+  font-size:2rem;

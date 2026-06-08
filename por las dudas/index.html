@@ -1,0 +1,82 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+  <meta charset="UTF-8">
+  <title>Buscador iTunes</title>
+  <style>
+    body {
+      font-family: Arial, sans-serif;
+      background: #f4f4f4;
+      padding: 20px;
+    }
+    #grid {
+      display: grid;
+      grid-template-columns: repeat(auto-fill, minmax(200px, 1fr));
+      gap: 20px;
+      margin-top: 20px;
+    }
+    .card {
+      background: #fff;
+      border-radius: 8px;
+      padding: 10px;
+      box-shadow: 0 2px 5px rgba(0,0,0,0.1);
+      text-align: center;
+      cursor: pointer;
+      transition: transform 0.2s;
+    }
+    .card:hover {
+      transform: scale(1.05);
+    }
+    .card img {
+      width: 100%;
+      border-radius: 6px;
+    }
+    .card h3 {
+      font-size: 16px;
+      margin: 10px 0 5px;
+    }
+    .card p {
+      font-size: 14px;
+      color: #555;
+    }
+  </style>
+</head>
+<body>
+  <h1>Buscador de Canciones (iTunes)</h1>
+  <input type="text" id="search" placeholder="Buscar artista o canción">
+  <button onclick="buscarCancion()">Buscar</button>
+  
+  <div id="grid"></div>
+
+  <script>
+    async function buscarCancion() {
+      const query = document.getElementById("search").value;
+      const response = await fetch(
+        `https://itunes.apple.com/search?term=${encodeURIComponent(query)}&entity=song&limit=8`
+      );
+      const data = await response.json();
+      
+      const grid = document.getElementById("grid");
+      grid.innerHTML = ""; // limpiar resultados
+      
+      data.results.forEach(track => {
+        const card = document.createElement("div");
+        card.className = "card";
+        card.innerHTML = `
+          <img src="${track.artworkUrl100}" alt="cover">
+          <h3>${track.trackName}</h3>
+          <p>${track.artistName}</p>
+        `;
+        
+        // Al hacer click: guardar canción y redirigir
+        card.addEventListener("click", () => {
+          localStorage.setItem("cancionSeleccionada", JSON.stringify(track));
+          window.location.href = "juego.html";
+        });
+
+        grid.appendChild(card);
+      });
+    }
+  </script>
+</body>
+</html>

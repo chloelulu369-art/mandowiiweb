@@ -1,0 +1,29 @@
+como hacer el proyecto:
+1- instalar glovepie en la pc
+2- mapear el mando para que tome el giroescopio como un analog stik
+3-cargar libreria Gamepad API
+4-codear
+
+idea del proyecto:
+una app que te permita ver con interfas tipo mario kart 8bits o juego de ritmo, como se mapean los botones del wiimote
+
+apartados:
+1-¿como mapear?
+2-comprobacion del mando
+3-minijuego a
+4-minijuego b
+
+si sobra tiempo: añadir nuck, cambio de personajes.
+
+diseño de interfaz a fondo:
+fondo plano
+personaje 
+  { 3 frames o mas }
+dato del angulo 
+reprecentacion grafica del dato del angulo (opcional)
+mando conectado
+mando desconectado/pausa
+cuenta regresiva
+
+leeer js ya de eventos
+ide= <input type="radio" name="radio1" id="radioa"><br>

@@ -1,0 +1,59 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Wiimote tester</title>
+  <style>
+    #auto {
+      position: absolute;
+      transition: all 0.3s ease; /* movimiento suave */
+    }
+    #background {
+      position: fixed;
+      top: 0;
+      left: 0;
+      width: 100%;
+      height: 100%;
+      background-size: cover;
+      z-index: -1; /* detrás de todo */
+      background-image: url("{3E9B6367-8F44-4700-8C8F-C47283765B2F}.png");
+    }
+  </style>
+</head>
+<body>
+  <div id="background"></div>
+  <div id="auto">
+    <img src="auto.png" width="200" height="200">
+  </div>
+
+  <script>
+    // Mover a coordenadas fijas en píxeles
+    function moverAFijo(x, y) {
+      const div = document.querySelector("#auto");
+      div.style.left = x + "px";
+      div.style.top = y + "px";
+    }
+
+    // Mover a coordenadas adaptables en porcentaje
+    function moverAdaptable(xPercent, yPercent) {
+      const div = document.querySelector("#auto");
+      let posicion = div.getBoundingClientRect();
+      const ancho = window.innerWidth;
+      const alto = window.innerHeight;
+
+      div.style.left = posicion.x + (ancho * xPercent / 100) + "px";
+      div.style.top = (alto * yPercent / 100) + "px";
+    }
+
+    // Ejemplo: al hacer click, mover al 50% ancho y 0% alto-------------------------------------------------------------------------------
+    document.querySelector("#auto").addEventListener("click", () => {
+      moverAdaptable(30);
+    });
+    if("#auto">moverafijo==100){}
+
+    // Ejemplo inicial: posición fija en 100px, 150px
+    moverAFijo(ancho * 50 / 100, alto * 50 / 110);
+  </script>
+</body>
+</html>

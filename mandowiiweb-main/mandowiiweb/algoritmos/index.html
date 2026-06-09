@@ -1,0 +1,69 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>joistick tester</title>
+  <style>
+    #auto {
+      
+      transition: all 0.3s ease; /* movimiento suave */
+    }
+  
+    #background {
+      position: fixed;
+      top: 0;
+      left: 0;
+      width: 100%;
+      height: 100%;
+      background-size: cover;
+      z-index: -1; /* detrás de todo */
+      background-image: url("{3E9B6367-8F44-4700-8C8F-C47283765B2F}.png");
+    }
+  </style>
+</head>
+<body>
+  <div id="background"></div>
+  <div id="auto">
+    <img src="auto.png" width="200" height="200">
+  </div>
+
+  <script src="https://cdn.jsdelivr.net/npm/gamecontroller.js@latest/dist/gamecontroller.min.js">
+    //variables
+  let torta = 1;
+    if(torta>3){
+      torta=3;
+    }
+    if(torta>1){
+      torta=1;
+    }
+
+   function left(){
+  if(gameControl.on('left0', 0.5)){
+      console.log('izquierda precionado');
+    torta=(torta-1);
+      }}
+  function right(){
+   if(gameControl.on('right0', 0.5)){
+      console.log('derecha precionado');
+     torta=(torta+1);
+      }}
+  function actualizarClase() {
+  const auto = document.getElementById("auto");
+
+  // quitamos cualquier clase 
+  auto.classList.remove("izquierda", "centro", "derecha");
+
+  // Según el valor de la variable aplicamos la clase
+  if (torta === 1) {
+    auto.classList.add("izquierda");
+  } else if (torta === 2) {
+    auto.classList.add("centro");
+  } else if (torta === 3) {
+    auto.classList.add("derecha");
+  }
+}
+
+  </script>
+</body>
+</html>
